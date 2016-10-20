@@ -1,5 +1,7 @@
 /node_modules
 /public/storage
+/public/css/vue.css
+/public/js/vue.js
 /vendor
 /.idea
 Homestead.json

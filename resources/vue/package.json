@@ -4,10 +4,9 @@
   "author": "Vinicius Reis <luiz.vinicius73@gmail.com>",
   "private": true,
   "scripts": {
-    "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
-    "serve": "http-server -o -c 1 -a localhost",
-    "dev": "npm-run-all --parallel watchify serve",
-    "build": "cross-env NODE_ENV=production browserify -g envify -p [ vueify/plugins/extract-css -o dist/build.css ] -e src/main.js | uglifyjs -c warnings=false -m > dist/build.js"
+    "watchify": "watchify -p [ vueify/plugins/extract-css -o ../../public/css/vue.css ] -vd -e src/main.js -o ../../public/js/vue.js",
+    "build": "cross-env NODE_ENV=production browserify -g envify -p [ vueify/plugins/extract-css -o ../../public/css/vue.css ] -e src/main.js | uglifyjs -c warnings=false -m > ../../public/js/vue.js",
+    "build:dev": "cross-env NODE_ENV=development browserify -g envify -p [ vueify/plugins/extract-css -o ../../public/css/vue.css ] -e src/main.js > ../../public/js/vue.js"
   },
   "browserify": {
     "transform": [
@@ -18,7 +17,7 @@
   },
   "aliasify": {
     "aliases": {
-      "vue$": "vue/dist/vue"
+      "vue": "vue/dist/vue.js"
     }
   },
   "dependencies": {

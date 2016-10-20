@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/vue.css') }}" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
@@ -19,6 +20,16 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+            }
+
+            .links > a {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
             }
 
             .full-height {
@@ -49,16 +60,6 @@
                 font-size: 84px;
             }
 
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -78,20 +79,15 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content" id="app">
                 <div class="title m-b-md">
-                    Laravel
+                    CODECASTS <br>
+                    @{{ title }}
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://codecasts.com.br">CODECASTS [pt-BR]</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/codecasts/laravel">GitHub</a>
-                </div>
+                <welcome-links />
             </div>
         </div>
+        <script src="{{ asset('/js/vue.js') }}" charset="utf-8"></script>
     </body>
 </html>
